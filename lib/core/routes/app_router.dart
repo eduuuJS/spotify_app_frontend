@@ -1,10 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:spotify_app/app/features/home/presentation/home_view.dart';
-import 'package:spotify_app/app/features/playlist/presentation/create_playlist/create_playlist_view.dart';
-import 'package:spotify_app/app/features/playlist/presentation/playlist_songs/playlist_songs_view.dart';
-import 'package:spotify_app/app/features/playlist/presentation/search_songs/search_songs_view.dart';
-import 'package:spotify_app/app/features/splash/presentation/splash_view.dart';
+import 'package:spotify_app/app/presentation/views/create_playlist/create_playlist_view.dart';
+import 'package:spotify_app/app/presentation/views/home/home_view.dart';
+import 'package:spotify_app/app/presentation/views/playlist_songs/playlist_songs_view.dart';
+import 'package:spotify_app/app/presentation/views/search_songs/search_songs_view.dart';
+import 'package:spotify_app/app/presentation/views/splash/splash_view.dart';
 
 part 'app_router.g.dart';
 
@@ -25,7 +25,12 @@ GoRouter appRouter(AppRouterRef ref) {
     ),
     GoRoute(
       path: AppRoutesNamed.playlistRoute,
-      builder: (context, state) => const PlaylistSongsView(),
+      builder: (context, state) {
+        final params = state.extra as Map;
+        return PlaylistSongsView(
+          playlistData: params["data"],
+        );
+      },
     ),
     GoRoute(
       path: AppRoutesNamed.createPlaylistRoute,

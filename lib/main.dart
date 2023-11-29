@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spotify_app/core/routes/app_router.dart';
+import 'package:spotify_app/core/utils/dependency_injection.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  DependencyInjection.init();
   runApp(const ProviderScope(child: MyApp()));
 }
 

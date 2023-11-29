@@ -3,6 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spotify_app/core/theme/app_colors.dart';
 
 abstract class Helpers {
+  static Color getColor(String color) {
+    try {
+      int value = int.parse(color.replaceAll('Color(', '').replaceAll(')', ''));
+      return Color(value);
+    } catch (e) {
+      return AppColors.primaryColor;
+    }
+  }
+
   static Future<void> getShowModalBS(
     BuildContext context, {
     required Widget content,
