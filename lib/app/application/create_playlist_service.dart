@@ -25,6 +25,10 @@ class CreatePlaylistServices {
     songs = [];
   }
 
+  void changeName(String name) {
+    this.name = name;
+  }
+
   bool addSong(SongItemDomain song) {
     if (songs.any((element) => element.id == song.id)) {
       return false;

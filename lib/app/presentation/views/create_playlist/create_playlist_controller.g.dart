@@ -158,7 +158,7 @@ class _CreatePlaylistLoaderProviderElement
 }
 
 String _$createPlaylistControllerHash() =>
-    r'c6c02fb4e309be37df67c471aa4ed542639530b9';
+    r'88287ced05563b6738f3233925e86211c0169305';
 
 /// See also [CreatePlaylistController].
 @ProviderFor(CreatePlaylistController)

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:spotify_app/app/domain/song_item_domain.dart';
+import 'package:spotify_app/app/presentation/components/btn_favorite.dart';
 import 'package:spotify_app/app/presentation/views/search_songs/search_songs_controller.dart';
 import 'package:spotify_app/core/theme/app_colors.dart';
 
@@ -72,14 +73,7 @@ class ItemSongSearch extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          GestureDetector(
-            child: Icon(
-              item.liked ? Iconsax.heart5 : Iconsax.heart,
-              color: item.liked ? AppColors.primaryColor : Colors.white,
-              size: 20.0,
-            ),
-            onTap: () {},
-          ),
+          BtnFavorite(value: item.liked, idSong: item.id),
           const SizedBox(
             width: 10,
           ),

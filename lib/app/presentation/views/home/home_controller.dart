@@ -6,6 +6,7 @@ part 'home_controller.g.dart';
 
 @riverpod
 Future<void> homeLoader(HomeLoaderRef ref) async {
+  await Future.delayed(Duration.zero);
   await ref.watch(listPlaylistHomeStateProvider.notifier).fetchData();
 }
 

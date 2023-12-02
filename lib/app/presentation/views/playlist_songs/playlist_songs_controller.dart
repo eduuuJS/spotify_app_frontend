@@ -26,16 +26,3 @@ class DetailPlaylistSongsState extends _$DetailPlaylistSongsState {
     state = state.map((e) => e.likeSong(id, value)).toList();
   }
 }
-
-@riverpod
-class PlaylistSongsController extends _$PlaylistSongsController {
-  @override
-  void build() {
-    return;
-  }
-
-  Future<void> likeSong(String id, bool value) async {
-    ref.watch(playlistRepositoryProvider).likeSong(id, value);
-    ref.watch(detailPlaylistSongsStateProvider.notifier).likeSong(id, value);
-  }
-}

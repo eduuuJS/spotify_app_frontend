@@ -1,10 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:spotify_app/app/domain/song_item_domain.dart';
+import 'package:spotify_app/app/presentation/components/btn_favorite.dart';
 import 'package:spotify_app/app/presentation/views/playlist_songs/playlist_songs_controller.dart';
-import 'package:spotify_app/core/theme/app_colors.dart';
 
 class SongList extends ConsumerWidget {
   const SongList({super.key});
@@ -70,18 +69,7 @@ class ItemSong extends ConsumerWidget {
           const SizedBox(
             width: 10,
           ),
-          GestureDetector(
-            child: Icon(
-              item.liked ? Iconsax.heart5 : Iconsax.heart,
-              color: item.liked ? AppColors.primaryColor : Colors.white,
-              size: 20.0,
-            ),
-            onTap: () {
-              ref
-                  .read(playlistSongsControllerProvider.notifier)
-                  .likeSong(item.id, !item.liked);
-            },
-          ),
+          BtnFavorite(value: item.liked, idSong: item.id),
           const SizedBox(
             width: 10,
           ),
@@ -91,40 +79,6 @@ class ItemSong extends ConsumerWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class BtnFavorite extends StatefulWidget {
-  const BtnFavorite({Key? key, required this.value}) : super(key: key);
-  final bool value;
-
-  @override
-  BtnFavoriteState createState() => BtnFavoriteState();
-}
-
-class BtnFavoriteState extends State<BtnFavorite> {
-  bool value = false;
-
-  @override
-  void initState() {
-    value = widget.value;
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Icon(
-        value ? Iconsax.heart5 : Iconsax.heart,
-        color: value ? AppColors.primaryColor : Colors.white,
-        size: 20.0,
-      ),
-      onTap: () {
-        setState(() {
-          value = !value;
-        });
-      },
     );
   }
 }

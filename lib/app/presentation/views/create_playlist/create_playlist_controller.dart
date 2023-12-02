@@ -42,7 +42,7 @@ class CreatePlaylistController extends _$CreatePlaylistController {
   }
 
   void changeName(String name) {
-    ref.watch(createPlaylistServicesProvider).name = name;
+    ref.watch(createPlaylistServicesProvider).changeName(name);
     ref.watch(nameCreatePlaylistStateProvider.notifier).fetchData();
   }
 

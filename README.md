@@ -1,16 +1,21 @@
-# spotify_app
+## Spotify Flite - Small clone Spotify in Flutter
 
-A new Flutter project.
+## Screenshots
 
-## Getting Started
+Home Page             |  Playlist Songs Page 1
+:-------------------------:|:-------------------------:
+![](assets/img/home_page.jpeg)|![](assets/img/playlist_page.jpeg)|
 
-This project is a starting point for a Flutter application.
+Create Playlist Page            |  Search Songs Page
+:-------------------------:|:-------------------------:
+![](assets/img/create_playlist_page.jpeg)|![](assets/img/search_songs_page.jpeg)|
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Getting started 
+* In lib/core/utils/constants.dart change "Your_Ip" for your local IP
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Backend
+* [ Click here](https://github.com/eduuuJS/spotify_app_backend)
+
+## Contributors
+* [eduuuJS](https://github.com/eduuuJS)

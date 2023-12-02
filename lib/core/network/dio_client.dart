@@ -3,11 +3,12 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:spotify_app/core/network/interceptors/logger_interceptor.dart';
+import 'package:spotify_app/core/utils/constants.dart';
 
 class DioClient {
   final _dio = Dio(
     BaseOptions(
-      baseUrl: "http://192.168.18.53:3000",
+      baseUrl: "http://$myIP:3000",
       connectTimeout: const Duration(
         milliseconds: 600000,
       ),
